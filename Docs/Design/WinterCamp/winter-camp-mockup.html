@@ -1,0 +1,322 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>冬季訓練營｜排版示意草稿</title><style>/* Winter camp landing page. Palette comes from the Kiri Fitness logo: white, yellow, black. */
+
+:root {
+  --white: #ffffff;
+  --yellow: #f8c018;
+  --black: #111111;
+  --ink: #1c1c1c;
+  --line: #111111;
+  --muted: #3f3f3f;
+  --space: 1.25rem;
+  --max: 960px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: "PingFang TC", "Noto Sans TC", "Heiti TC", sans-serif;
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 4px solid var(--black);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+}
+
+.logo {
+  width: 92px;
+  height: auto;
+}
+
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+.hero-grid,
+.split,
+.price-grid,
+.fit-grid,
+.type-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.kicker {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--black);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.125rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.meta li {
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--black);
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dates li {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.photo-slot {
+  margin: 0;
+  min-height: 220px;
+  border: 2px dashed var(--black);
+  background:
+    linear-gradient(135deg, var(--yellow) 0 18px, transparent 18px) top left / 100% 100% no-repeat,
+    var(--white);
+  display: grid;
+  place-items: end start;
+  padding: 0.75rem;
+}
+
+.photo-slot span,
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.type-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.type-card,
+.panel,
+.form-card {
+  border: 2px solid var(--black);
+  background: var(--white);
+  padding: 1rem;
+}
+
+.type-card h3 {
+  margin: 0.75rem 0 0.35rem;
+}
+
+.type-card p,
+.panel p,
+.teacher p {
+  margin: 0;
+}
+
+.price-banner {
+  background: var(--black);
+  color: var(--white);
+  padding: 1.5rem;
+}
+
+.price-banner h2,
+.price-banner p {
+  color: var(--white);
+}
+
+.price-grid {
+  margin-top: 1rem;
+}
+
+.price-card {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 1rem 1.1rem;
+}
+
+.price-card p {
+  margin: 0.25rem 0 0;
+}
+
+.amount {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.fit-grid article + article {
+  background: var(--black);
+  color: var(--white);
+}
+
+.fit-grid article + article h2 {
+  color: var(--white);
+}
+
+.teacher {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+}
+
+input {
+  border: 2px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  padding: 0.65rem 0.75rem;
+}
+
+button {
+  border: 2px solid var(--black);
+  background: var(--yellow);
+  color: var(--black);
+  font: inherit;
+  font-weight: 800;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.form-status {
+  min-height: 1.4em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.site-footer {
+  border-top: 4px solid var(--black);
+  padding: 1.25rem 0 2rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (min-width: 800px) {
+  .hero-grid,
+  .split,
+  .price-grid,
+  .fit-grid,
+  .teacher {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+
+  .fit-grid,
+  .teacher {
+    align-items: stretch;
+  }
+
+  .dates {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .dates,
+  .type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Presentation-only overrides. Original index.html and CSS remain untouched. */
+body{font-size:16px} .site-header .wrap{justify-content:space-between}.draft-label{font-size:12px;letter-spacing:2px;border:1px solid;padding:6px 12px}.hero{padding:48px 0}.hero-grid{gap:32px}.kicker{font-size:13px;letter-spacing:3px}.hero h1{font-size:52px;letter-spacing:-1px;line-height:1.22}.hero h1 em{font-style:normal;box-shadow:inset 0 -15px #f8c018}.hero-image{margin:0;position:relative}.hero-image img{width:100%;height:500px;object-fit:cover;display:block}.hero-image figcaption{position:absolute;bottom:16px;left:16px;background:#f8c018;padding:6px 12px;font-weight:700}.hero .meta{font-size:14px}.cta{display:inline-block;margin-top:24px;background:#111;color:#fff;text-decoration:none;padding:12px 24px;font-weight:700}.hero-note{font-size:13px;margin:12px 0 0}.section{padding:40px 0}.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:24px}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700}.dates li{aspect-ratio:auto;height:74px;display:flex;flex-direction:column;gap:0;font-size:21px}.dates li small{font-size:10px;letter-spacing:1px}.venue{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:22px;padding-top:20px;border-top:1px solid #111}.venue h3{font-size:18px}.venue p{margin:6px 0 0;font-size:14px}.type-grid{gap:24px}.type-card{padding:0;border:1px solid #111}.card-copy{padding:22px}.card-copy h3{font-size:24px;margin:0 0 12px}.card-copy p{font-size:14px;line-height:1.8;margin:0 0 12px}.card-copy p:last-child{margin:0}.course-number{display:inline-block;font-size:11px;background:#f8c018;padding:2px 7px;margin-bottom:10px;letter-spacing:1px}.pending{font-size:13px!important;color:#555;border-top:1px dashed #888;padding-top:12px}.price-banner{padding:30px}.price-grid{grid-template-columns:1fr 1fr;align-items:stretch}.price-card{padding:24px}.price-banner .price-card p{color:#111}.price-card .amount{font-size:48px;margin:15px 0}.amount small{font-size:16px}.price-banner>.note{font-size:13px}.fit-grid{grid-template-columns:1fr 1fr}.fit-grid .panel{border-width:1px;padding:24px}.fit-grid h2{font-size:22px}.fit-grid p{font-size:14px}.teacher{grid-template-columns:300px 1fr;gap:36px}.teacher figure{margin:0}.teacher img{width:300px;height:400px;object-fit:cover;display:block}.teacher figcaption{font-size:11px;letter-spacing:2px;margin-top:10px}.teacher h2{font-size:30px;margin-bottom:12px}.teacher blockquote{margin:0 0 16px;font-size:21px;font-weight:700;border-left:5px solid #f8c018;padding-left:14px}.teacher p{font-size:14px;line-height:1.8;margin-bottom:12px}.teacher h3{font-size:15px;margin:16px 0 7px}.credentials{margin:0;padding-left:18px;font-size:13px;line-height:1.9}.teacher-experience{margin-top:18px;border-top:1px solid;padding-top:14px}.form-card{border-width:1px;padding:24px}.form-card input{border-width:1px;height:44px}.form-card button{cursor:default}.split{align-items:start;gap:36px}.signup-copy{font-size:15px}.signup-copy .steps{padding-left:20px;line-height:2.2}.signup-copy .note{font-size:13px}.site-footer .wrap{display:flex;justify-content:space-between;font-size:12px}.site-footer{padding:22px 0}.meta li{padding:6px 10px}.section-subtitle{font-size:14px;margin:0 0 22px}.section h2{margin-bottom:16px}
+
+/* Revised visual draft: text-only hero, scheduled courses and paired photography. */
+.hero{padding:58px 0 48px}.hero-grid{display:block;text-align:center}.hero h1{font-size:60px;line-height:1.18}.hero .lead{max-width:760px;margin:24px auto 0;font-size:18px}.hero .meta{justify-content:center;margin-top:24px}.hero .cta{margin-top:24px}.hero-note{display:inline-block;margin-left:16px}.hero .kicker{margin-bottom:18px}
+.dates{gap:12px}.dates li{height:116px;justify-content:center;gap:5px}.dates li strong{font-size:25px;line-height:1.2}.dates li span{font-size:13px;white-space:nowrap}.dates li small{font-size:10px;letter-spacing:0}.dates li:nth-child(4n+3),.dates li:nth-child(4n+4){background:#fff;border:1px solid #111;box-shadow:inset 0 5px #f8c018}
+.type-grid{align-items:stretch}.photo-pair{display:grid;grid-template-columns:1fr;gap:0}.photo-frame{margin:0;position:relative;height:500px;overflow:hidden;background:#f3f3f0}.photo-frame svg{width:100%;height:100%;display:block}.photo-frame+ .photo-frame{height:258px;border-top:4px solid white}.photo-frame figcaption{position:absolute;left:12px;bottom:12px;background:#fff;color:#111;font-size:11px;letter-spacing:1px;padding:4px 10px;box-shadow:0 0 0 1px #111}.photo-frame:first-child figcaption{background:#f8c018;box-shadow:none}.photo-frame.missing{background:repeating-linear-gradient(135deg,#fff,#fff 14px,#f6f6f4 14px,#f6f6f4 15px);display:grid;place-items:center;text-align:center}.missing strong{display:block;font-size:17px}.missing p{font-size:12px;margin:9px 0;color:#555}.placeholder-icon{font-size:30px;font-weight:300}.type-card:nth-child(2){align-self:stretch}.location-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:30px;align-items:start}.location-grid h3{font-size:23px}.location-grid p{font-size:14px;line-height:1.9}.transit{border-top:1px solid #111;border-bottom:1px solid #111;padding:6px 0;margin:22px 0}.arrival-title{font-size:17px!important}.map-panel{margin:0;border:1px solid #111}.map-panel svg{display:block;width:100%}.map-panel figcaption{font-size:11px;padding:10px 14px;border-top:1px solid #111;background:#fff}.location-grid .course-number{margin-bottom:12px}
+</style></head><body>
+<header class="site-header"><div class="wrap"><img class="logo" src="../../../KiriFitnessLogo_20250401(whitebg).png" alt="Kiri Fitness"><span class="draft-label">2026 WINTER CAMP · 排版示意草稿</span></div></header>
+<main><section class="hero"><div class="wrap hero-grid"><div><p class="kicker">KIRI FITNESS / 2026 WINTER</p><h1>2026 冬季<br><em>全方位訓練營</em></h1><p class="lead">八堂、每週一，在公館把 TRX 肌力、壺鈴肌力、TRX Yoga 與徒手肌力排進同一期。</p><ul class="meta"><li>公館教室</li><li>每週一 20:30–21:30</li><li>11/9–12/28・共 8 堂</li></ul><a class="cta" href="#signup">查看報名資訊 ↗</a><p class="hero-note">限定開辦・4 人開班・最多 10 人</p></div></div></section>
+<section class="section" id="dates"><div class="wrap"><div class="section-heading"><h2>上課日期</h2><span class="eyebrow">02 / SCHEDULE</span></div><p class="section-subtitle">2026 年 11 月 9 日 — 12 月 28 日，每週一 20:30–21:30，共 8 堂。</p><ol class="dates"><li><small>第 1 堂・週一</small><strong>11/9</strong><span>TRX 肌力</span></li><li><small>第 2 堂・週一</small><strong>11/16</strong><span>TRX 肌力</span></li><li><small>第 3 堂・週一</small><strong>11/23</strong><span>壺鈴肌力</span></li><li><small>第 4 堂・週一</small><strong>11/30</strong><span>壺鈴肌力</span></li><li><small>第 5 堂・週一</small><strong>12/7</strong><span>TRX Yoga</span></li><li><small>第 6 堂・週一</small><strong>12/14</strong><span>TRX Yoga</span></li><li><small>第 7 堂・週一</small><strong>12/21</strong><span>徒手肌力</span></li><li><small>第 8 堂・週一</small><strong>12/28</strong><span>徒手肌力</span></li></ol></div></section>
+<section class="section" id="types"><div class="wrap"><div class="section-heading"><h2>這期的四種訓練</h2><span class="eyebrow">03 / THE TRAINING</span></div><p class="section-subtitle">每種訓練各 2 堂，從個人動作示範到課堂實際練習。</p><div class="type-grid">
+<article class="type-card"><div class="photo-pair"><figure class="photo-frame"><svg role="img" aria-label="個人示範" xmlns="http://www.w3.org/2000/svg" viewBox="0 650 1279 1366" preserveAspectRatio="xMidYMid slice"><defs><filter id="blur-trx-solo" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"/></filter><clipPath id="faces-trx-solo"></clipPath><image id="img-trx-solo" href="../../../Photos/TRX/IMG_6899_pike.jpg" width="1279" height="2274"/></defs><use href="#img-trx-solo"/></svg><figcaption>個人示範</figcaption></figure></div><div class="card-copy"><span class="course-number">01 / STRENGTH</span><h3>TRX 肌力</h3><p>TRX 是 Total body Resistance Exercise 的簡稱，利用自身重量與重力進行全身肌力訓練，並透過傾斜角度與姿勢調整強度。</p><p>課程有強度，也充滿挑戰，但打底的動作一個都不會少。以安穩的基底為前提，才去探索更多變化。</p><p>學會察覺身體狀態，找到適合當下的強度；搭配音樂節奏設計專屬動作，讓訓練有趣且充滿活力。</p></div></article>
+<article class="type-card"><div class="photo-pair"><figure class="photo-frame"><svg role="img" aria-label="個人示範" xmlns="http://www.w3.org/2000/svg" viewBox="0 250 976 1043" preserveAspectRatio="xMidYMid slice"><defs><filter id="blur-kb-solo" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"/></filter><clipPath id="faces-kb-solo"></clipPath><image id="img-kb-solo" href="../../../Photos/Kettlebell/IMG_4653.jpg" width="976" height="1730"/></defs><use href="#img-kb-solo"/></svg><figcaption>個人示範</figcaption></figure></div><div class="card-copy"><span class="course-number">02 / KETTLEBELL</span><h3>壺鈴肌力</h3><p class="pending">課程簡介待補｜先呈現照片與版面位置。</p></div></article>
+<article class="type-card"><div class="photo-pair"><figure class="photo-frame"><svg role="img" aria-label="個人示範" xmlns="http://www.w3.org/2000/svg" viewBox="245 820 558 598" preserveAspectRatio="xMidYMid slice"><defs><filter id="blur-yoga-solo" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"/></filter><clipPath id="faces-yoga-solo"></clipPath><image id="img-yoga-solo" href="../../../Photos/TRX Yoga/IMG_0281.jpg" width="803" height="1418"/></defs><use href="#img-yoga-solo"/></svg><figcaption>個人示範</figcaption></figure></div><div class="card-copy"><span class="course-number">03 / YOGA</span><h3>TRX Yoga</h3><p>結合傳統瑜伽體位法與 TRX 懸吊繩，透過傾斜角度和姿勢的搭配，調整適合自己的練習強度。</p><p>運用繩子輔助拉、推、舉、按與旋轉，理解動作中的發力力道與方向，讓力量視覺化。</p><p>與呼吸結合，建立姿勢對齊、靈活性和穩定性，從初學到進階，更密切地了解自己的身體。</p></div></article>
+<article class="type-card"><div class="photo-pair"><figure class="photo-frame"><svg role="img" aria-label="個人示範" xmlns="http://www.w3.org/2000/svg" viewBox="240 350 1000 1068" preserveAspectRatio="xMidYMid slice"><defs><filter id="blur-body-class" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"/></filter><clipPath id="faces-body-class"><path d="M8 630 Q34 611 57 633 L68 655 62 683 44 703 20 693 5 669 Z"/><path d="M301 632 Q315 615 334 622 L348 636 336 640 314 649 309 666 299 665 295 649 Z"/><path d="M955 616 Q968 588 991 592 Q1013 597 1016 623 L1013 654 1001 673 978 665 958 652 Z"/><path d="M1211 623 Q1235 598 1261 619 L1272 648 1262 677 1236 691 1221 675 1210 654 Z"/></clipPath><image id="img-body-class" href="../../../Photos/Others/IMG_9802_fix.png" width="1280" height="1920"/></defs><use href="#img-body-class"/><use href="#img-body-class" filter="url(#blur-body-class)" clip-path="url(#faces-body-class)"/></svg><figcaption>個人示範</figcaption></figure></div><div class="card-copy"><span class="course-number">04 / BODYWEIGHT</span><h3>徒手肌力</h3><p class="pending">課程簡介待補｜先呈現照片與版面位置。</p></div></article>
+</div></div></section>
+<section class="section" id="price"><div class="wrap price-banner"><div class="section-heading"><h2>費用與報名方案</h2><span class="eyebrow">04 / JOIN THE CAMP</span></div><p>開班前開放整期報名，4 人開班，最多 10 人。</p><div class="price-grid"><article class="price-card"><h3>訓練營整期</h3><p class="amount"><small>NT$</small> 3,600</p><p>450 元／堂 × 8 堂</p></article><article class="price-card"><h3>雙人團報</h3><p class="amount"><small>NT$</small> 3,200 <small>／人</small></p><p>400 元／堂 × 8 堂・限組數</p></article></div><p class="note">確定開班後才開放單次加入，600 元／堂。團報組數與配對規則待確認。</p></div></section>
+<section class="section" id="fit"><div class="wrap fit-grid"><article class="panel"><h2>適合誰</h2><p>文案待補，保留現有版位。</p></article><article class="panel"><h2>不適合誰</h2><p>待冬季營參與規範確認後補上。</p></article></div></section>
+<section class="section" id="teacher"><div class="wrap teacher"><figure><img src="../../../Photos/Portrait/IMG_0766.JPG" alt="簡君容 Kiri Chien"><figcaption>KIRI CHIEN / YOUR COACH</figcaption></figure><div><p class="eyebrow">06 / MEET YOUR COACH</p><h2>簡君容 Kiri Chien</h2><blockquote>盡力不勉強，但不輕易放棄。</blockquote><p>我是熱愛健身的 Kiri 老師，喜歡接受挑戰，也持續投入跑步、TRX 懸吊、瑜伽、重訓與舞蹈等不同運動。</p><p>教學重視動作姿勢的正確性，並擅長搭配音樂設計課程專屬動作，讓訓練不再枯燥，變得有趣且充滿活力。</p><h3>相關證照</h3><ul class="credentials"><li>ACE-CPT 美國運動委員會 私人教練</li><li>Believe Training TRX-STC / TRX-YOGA</li><li>CTBBF 健美健身協會 C 級教練</li><li>全真瑜珈熱瑜珈師資</li></ul><div class="teacher-experience"><h3>實體與線上教學經歷｜2021 起</h3><p>私人工作室、OXEN FITNESS、CHILL YA WILD、新店國民運動中心、力矩體能、KIRI FITNESS。</p></div></div></div></section>
+<section class="section" id="location"><div class="wrap"><div class="section-heading"><h2>上課地點與交通資訊</h2><span class="eyebrow">07 / GETTING HERE</span></div><div class="location-grid"><div><span class="course-number">公館教室</span><h3>Chill野Wild生活</h3><p>台北市大安區羅斯福路三段<br>297 之 4 號 3 樓</p><div class="transit"><p><b>捷運公館站</b>　3 號出口</p><p><b>捷運台電大樓站</b>　2 號出口</p></div><h3 class="arrival-title">入場與準備</h3><p>場館入場需脫鞋，TRX Yoga 光腳上課。<br>場館提供瑜伽墊，也可自備。<br>請攜帶毛巾與水壺。</p></div><figure class="map-panel"><svg role="img" aria-label="教室與捷運站位置示意，非導航地圖" viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="350" fill="#f4f4f1"/><g fill="#e6e6e1"><rect x="18" y="18" width="118" height="70"/><rect x="173" y="18" width="118" height="70"/><rect x="329" y="18" width="210" height="70"/><rect x="18" y="124" width="118" height="100"/><rect x="173" y="124" width="118" height="100"/><rect x="329" y="124" width="210" height="100"/><rect x="18" y="260" width="118" height="72"/><rect x="173" y="260" width="118" height="72"/><rect x="329" y="260" width="210" height="72"/></g><path d="M70 -20L465 375" stroke="white" stroke-width="65"/><path d="M70 -20L465 375" stroke="#d3d3ca" stroke-width="1" stroke-dasharray="6 7"/><text transform="translate(205 145) rotate(45)" font-size="15" fill="#555">羅斯福路三段</text><g font-family="PingFang TC,sans-serif"><rect x="25" y="24" width="180" height="60" fill="#111"/><text x="40" y="49" font-size="16" fill="white" font-weight="700">捷運台電大樓站</text><text x="40" y="70" font-size="12" fill="#f8c018">2 號出口</text><circle cx="131" cy="93" r="7" fill="#111"/><rect x="352" y="269" width="181" height="60" fill="#111"/><text x="369" y="295" font-size="16" fill="white" font-weight="700">捷運公館站</text><text x="369" y="316" font-size="12" fill="#f8c018">3 號出口</text><circle cx="400" cy="261" r="7" fill="#111"/><path d="M318 170C301 170 289 182 289 197C289 215 318 239 318 239S347 215 347 197C347 182 335 170 318 170Z" fill="#f8c018" stroke="#111" stroke-width="2"/><circle cx="318" cy="196" r="9" fill="#111"/><rect x="349" y="161" width="194" height="67" fill="white" stroke="#111"/><text x="361" y="186" font-size="16" font-weight="700">Chill野Wild生活</text><text x="361" y="210" font-size="12">297 之 4 號・3 樓</text><text x="22" y="327" font-size="11" fill="#555">位置示意・非依實際比例繪製</text></g></svg><figcaption>地圖版位示意｜正式頁面可放入互動地圖</figcaption></figure></div></div></section>
+<section class="section" id="signup"><div class="wrap split"><div class="signup-copy"><p class="eyebrow">08 / REGISTRATION</p><h2>報名冬季訓練營</h2><p>以銀行轉帳付款，由老師人工核對匯款，<br>再以 email 通知報名結果。</p><ol class="steps"><li>確認報名方案與繳費資訊</li><li>完成匯款，填寫右側報名資料</li><li>等待老師對帳與 email 通知</li></ol><p class="note">匯款帳號與其他繳費說明待補。<br>目前為排版示意，尚未開放報名。</p></div><form class="form-card"><label>姓名<input disabled placeholder="請填寫姓名"></label><label>Email<input disabled placeholder="請填寫電子信箱"></label><label>匯款後 5 碼<input disabled placeholder="請填寫 5 位數字"></label><button type="button" disabled>送出報名</button><p class="note" style="margin:0;text-align:center;font-size:12px">表單版位示意・尚未連接 Google 試算表</p></form></div></section>
+</main><footer class="site-footer"><div class="wrap"><p>Kiri Fitness · 2026 冬季全方位訓練營</p><p>DESIGN DRAFT / 2026.10.15</p></div></footer></body></html>
