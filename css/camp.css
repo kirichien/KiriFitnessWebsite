@@ -770,16 +770,40 @@ button:hover {
   border: 1px solid var(--black);
 }
 
-.map-panel svg {
+.map-panel iframe {
   display: block;
   width: 100%;
-  height: auto;
+  height: clamp(320px, 45vw, 420px);
+  border: 0;
 }
 
 .map-panel figcaption {
-  font-size: 0.75rem;
-  padding: 0.6rem 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  padding: 0.8rem;
   border-top: 1px solid var(--black);
+}
+
+.map-panel a {
+  display: inline-block;
+  padding: 0.55rem 0.75rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.map-panel a:hover {
+  text-decoration: underline;
+}
+
+.map-panel a:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
 }
 
 .steps {
