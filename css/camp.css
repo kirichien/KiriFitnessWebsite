@@ -355,6 +355,7 @@ h2 {
 }
 
 .form-card {
+  position: relative;
   display: grid;
   gap: 0.9rem;
 }
@@ -392,6 +393,31 @@ button:hover {
   min-height: 1.4em;
   margin: 0;
   font-weight: 700;
+}
+
+.form-status[data-state='pending'] {
+  color: var(--muted);
+}
+
+.form-status[data-state='success'] {
+  color: var(--black);
+}
+
+.form-status[data-state='error'] {
+  color: #8a1f1f;
+}
+
+.form-status[data-state='idle'] {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .site-footer {

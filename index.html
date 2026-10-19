@@ -319,23 +319,38 @@
               <li>完成匯款，填寫報名資料</li>
               <li>等待老師對帳與 email 通知</li>
             </ol>
-            <p class="note">匯款帳號與其他繳費說明待補。表單尚未開放送出。</p>
+            <p class="note">匯款帳號與其他繳費說明待補。</p>
           </div>
-          <form class="form-card" id="signup-form">
+          <form class="form-card" id="signup-form" novalidate>
+            <label class="hp-field" aria-hidden="true">
+              網站
+              <input name="website" type="text" tabindex="-1" autocomplete="off" />
+            </label>
             <label>
               姓名
-              <input name="name" type="text" placeholder="請填寫姓名" disabled />
+              <input name="name" type="text" placeholder="請填寫姓名" autocomplete="name" disabled required />
             </label>
             <label>
               Email
-              <input name="email" type="email" placeholder="請填寫電子信箱" disabled />
+              <input name="email" type="email" placeholder="請填寫電子信箱" autocomplete="email" disabled required />
             </label>
             <label>
               匯款後 5 碼
-              <input name="transfer-last5" type="text" placeholder="請填寫 5 位數字" disabled />
+              <input
+                name="transfer-last5"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]{5}"
+                maxlength="5"
+                placeholder="請填寫 5 位數字"
+                autocomplete="off"
+                disabled
+                required
+              />
             </label>
-            <button type="button" disabled>送出報名</button>
-            <p class="note">表單尚未連接 Google 試算表。</p>
+            <button type="submit" disabled>送出報名</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="note" data-connect-note>表單尚未連接 Google 試算表。</p>
           </form>
         </div>
       </section>
@@ -346,5 +361,7 @@
         <p>Kiri Fitness · 2026 冬季全方位訓練營</p>
       </div>
     </footer>
+    <script src="js/signup-config.js"></script>
+    <script src="js/signup.js"></script>
   </body>
 </html>
