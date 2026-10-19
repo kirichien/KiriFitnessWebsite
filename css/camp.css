@@ -787,6 +787,93 @@ button:hover {
   line-height: 2;
 }
 
+.signup-copy > p:not(.eyebrow) {
+  max-width: 48rem;
+  margin: 0;
+}
+
+.signup-copy .steps {
+  display: grid;
+  gap: 0.75rem 2.5rem;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  line-height: 1.65;
+}
+
+.signup-copy .steps li::marker {
+  font-weight: 800;
+}
+
+.signup-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.signup-layout > * {
+  min-width: 0;
+}
+
+.bank-details {
+  padding: 1.25rem;
+  border-left: 4px solid var(--yellow);
+  background: #f4f4f1;
+}
+
+.bank-details h3 {
+  font-size: 1.2rem;
+}
+
+.bank-details dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.65rem 1rem;
+  margin: 1rem 0 0;
+}
+
+.bank-details dt {
+  color: var(--muted);
+}
+
+.bank-details dd {
+  margin: 0;
+}
+
+.bank-account {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.payment-contact {
+  margin-top: 1.5rem;
+}
+
+.payment-contact h3 {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.payment-contact p {
+  margin: 0.75rem 0 0;
+}
+
+.payment-contact ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.payment-contact li + li {
+  margin-top: 0.25rem;
+}
+
+.signup-layout .form-card {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
 .form-card input:disabled,
 .form-card button:disabled {
   cursor: not-allowed;
@@ -801,6 +888,14 @@ button:hover {
 @media (min-width: 800px) {
   .hero-grid {
     display: block;
+  }
+
+  .signup-copy .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .signup-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .teacher {

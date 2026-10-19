@@ -314,53 +314,78 @@
       </section>
 
       <section class="section" id="signup">
-        <div class="wrap split">
+        <div class="wrap">
           <div class="signup-copy">
             <p class="eyebrow">07 / REGISTRATION</p>
             <h2>報名冬季訓練營</h2>
-            <p>以銀行轉帳付款。老師人工核對匯款後，再以 email 通知。</p>
+            <p>本次訓練營以銀行轉帳為主要繳費方式。完成匯款並填寫報名表後，老師會核對資料，再以 Email 通知報名結果。</p>
             <ol class="steps">
-              <li>確認報名方案與繳費資訊</li>
-              <li>完成匯款，填寫報名資料</li>
-              <li>等待老師對帳與 email 通知</li>
+              <li>確認報名方案與匯款資訊。</li>
+              <li>完成匯款，填寫下方報名表及匯款帳號後五碼。</li>
+              <li>留意 Email，確認報名結果。</li>
             </ol>
-            <p class="note">匯款帳號與其他繳費說明待補。</p>
           </div>
-          <form class="form-card" id="signup-form" novalidate>
-            <label class="hp-field" aria-hidden="true">
-              網站
-              <input name="website" type="text" tabindex="-1" autocomplete="off" />
-            </label>
-            <label>
-              姓名
-              <input name="name" type="text" placeholder="請填寫姓名" autocomplete="name" disabled required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" placeholder="請填寫電子信箱" autocomplete="email" disabled required />
-            </label>
-            <label>
-              匯款後 5 碼
-              <input
-                name="transfer-last5"
-                type="text"
-                inputmode="numeric"
-                pattern="[0-9]{5}"
-                maxlength="5"
-                placeholder="請填寫 5 位數字"
-                autocomplete="off"
-                disabled
-                required
-              />
-            </label>
-            <label class="agree-field">
-              <input name="agreed" type="checkbox" value="yes" disabled required />
-              <span>我已詳讀以上課程資訊與規範，並同意報名</span>
-            </label>
-            <button type="submit" disabled>送出報名</button>
-            <p class="form-status" role="status" aria-live="polite"></p>
-            <p class="note" data-connect-note>表單尚未連接 Google 試算表。</p>
-          </form>
+          <div class="signup-layout">
+            <div class="payment-info">
+              <section class="bank-details" aria-labelledby="bank-heading">
+                <h3 id="bank-heading">匯款資訊</h3>
+                <dl>
+                  <dt>銀行</dt>
+                  <dd>元大銀行（代碼 806）</dd>
+                  <dt>分行</dt>
+                  <dd>景美分行</dd>
+                  <dt>帳號</dt>
+                  <dd class="bank-account">20152000073356</dd>
+                  <dt>戶名</dt>
+                  <dd>簡君容</dd>
+                </dl>
+              </section>
+              <section class="payment-contact" aria-labelledby="payment-contact-heading">
+                <h3 id="payment-contact-heading">若希望使用 LINE Pay Money 或 iPASS MONEY繳費</h3>
+                <p>以下為Kiri老師的社群平台帳號：</p>
+                <ul>
+                  <li>Instagram：@kiriworkoutdiary</li>
+                  <li>Facebook：Kiri Fitness</li>
+                </ul>
+                <p>請於報名期間內私訊老師，確認繳費方式與報名流程。</p>
+              </section>
+            </div>
+            <form class="form-card" id="signup-form" novalidate>
+              <label class="hp-field" aria-hidden="true">
+                網站
+                <input name="website" type="text" tabindex="-1" autocomplete="off" />
+              </label>
+              <label>
+                姓名
+                <input name="name" type="text" placeholder="請填寫姓名" autocomplete="name" disabled required />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" placeholder="請填寫電子信箱" autocomplete="email" disabled required />
+              </label>
+              <label>
+                匯款後 5 碼
+                <input
+                  name="transfer-last5"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]{5}"
+                  maxlength="5"
+                  placeholder="請填寫 5 位數字"
+                  autocomplete="off"
+                  disabled
+                  required
+                />
+              </label>
+              <label class="agree-field">
+                <input name="agreed" type="checkbox" value="yes" disabled required />
+                <span>我已詳讀以上課程資訊與規範，並同意報名</span>
+              </label>
+              <button type="submit" disabled>送出報名</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <p class="note" data-connect-note>表單尚未連接 Google 試算表。</p>
+            </form>
+          </div>
         </div>
       </section>
     </main>
