@@ -5,7 +5,10 @@
  * Paste the /exec URL into js/signup-config.js on the site.
  *
  * Sheet columns (row 1 headers, created automatically if missing):
- * Timestamp | Id | Name | Email | TransferLast5 | Plan | TeacherNote
+ * Timestamp | Id | Name | Email | TransferLast5 | Plan | TeacherNote | Agreed
+ *
+ * An existing sheet keeps its current columns. Agreed is added at the end
+ * when that header cell is still empty.
  */
 
 var TIMEZONE = 'Asia/Taipei';
@@ -17,7 +20,8 @@ var HEADER_ROW = [
   'Email',
   'TransferLast5',
   'Plan',
-  'TeacherNote'
+  'TeacherNote',
+  'Agreed'
 ];
 
 var EARLY_START = '2026-10-19';
@@ -48,6 +52,9 @@ function doPost(e) {
     if (!/^\d{5}$/.test(transferLast5)) {
       return json_({ ok: false, error: 'invalid_transfer_last5' });
     }
+    if (!isAgreed_(payload.agreed)) {
+      return json_({ ok: false, error: 'missing_agreement' });
+    }
 
     var plan = resolvePlan_(new Date());
     if (!plan) {
@@ -67,7 +74,8 @@ function doPost(e) {
       email,
       transferLast5,
       plan.label,
-      ''
+      '',
+      'Yes'
     ]);
 
     return json_({ ok: true, id: id, plan: plan.label });
@@ -116,6 +124,10 @@ function isValidEmail_(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function isAgreed_(value) {
+  return value === true || value === 'true' || value === 'Yes' || value === 'yes';
+}
+
 function getOrCreateSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
@@ -135,6 +147,12 @@ function ensureHeader_(sheet) {
   if (empty) {
     sheet.getRange(1, 1, 1, HEADER_ROW.length).setValues([HEADER_ROW]);
     sheet.setFrozenRows(1);
+    return;
+  }
+  for (var i = 0; i < HEADER_ROW.length; i++) {
+    if (values[i] === '' || values[i] === null) {
+      sheet.getRange(1, i + 1).setValue(HEADER_ROW[i]);
+    }
   }
 }
 

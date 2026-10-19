@@ -69,6 +69,11 @@
       focusField('transfer-last5');
       return;
     }
+    if (!isAgreed()) {
+      setStatus('請勾選已詳讀課程資訊與規範，並同意報名。', 'error');
+      focusField('agreed');
+      return;
+    }
 
     var windowState = registrationWindowState();
     if (windowState === 'before') {
@@ -89,6 +94,7 @@
       name: name,
       email: email,
       transferLast5: transferLast5,
+      agreed: true,
       website: ''
     })
       .then(function () {
@@ -108,6 +114,11 @@
         setSubmitting(false);
       });
   });
+
+  function isAgreed() {
+    var field = form.elements.namedItem('agreed');
+    return !!(field && field.checked);
+  }
 
   function getValue(name) {
     var field = form.elements.namedItem(name);

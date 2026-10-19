@@ -366,6 +366,23 @@ label {
   font-weight: 700;
 }
 
+.agree-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.agree-field input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  flex: none;
+  accent-color: var(--black);
+}
+
 input {
   border: 2px solid var(--black);
   background: var(--white);
@@ -604,18 +621,6 @@ button:hover {
   object-position: center 100%;
 }
 
-.photo-frame figcaption {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  background: var(--yellow);
-  color: var(--black);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 0.25rem 0.6rem;
-}
-
 .card-copy {
   padding: 1.2rem 1.25rem 1.35rem;
 }
@@ -640,6 +645,34 @@ button:hover {
 
 .card-copy p:last-child {
   margin: 0;
+}
+
+.class-rules {
+  margin-top: 2.25rem;
+}
+
+.class-rules h3 {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+  padding: 0.15rem 0.55rem;
+}
+
+.class-rules ol {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.class-rules li {
+  line-height: 1.75;
+}
+
+.class-rules li + li {
+  margin-top: 0.45rem;
 }
 
 .pending {
