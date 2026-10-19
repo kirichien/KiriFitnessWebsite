@@ -189,6 +189,7 @@ h2 {
 
 .price-grid {
   margin-top: 1rem;
+  align-items: stretch;
 }
 
 .price-card {
@@ -197,8 +198,66 @@ h2 {
   padding: 1rem 1.1rem;
 }
 
+.price-card h3,
+.price-card p {
+  color: var(--black);
+}
+
 .price-card p {
   margin: 0.25rem 0 0;
+}
+
+.signup-window {
+  margin: 0.9rem 0 0;
+}
+
+.date-mark {
+  display: inline-block;
+  margin-left: 0.4rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 800;
+  line-height: 1.4;
+  padding: 0.12rem 0.5rem;
+}
+
+.price-when {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.price-card-early .price-when {
+  display: block;
+  margin: 0 0 0.45rem;
+  padding: 0;
+  background: transparent;
+  color: var(--black);
+  font-size: 1.65rem;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.price-card-early .amount {
+  font-size: clamp(2.35rem, 4.6vw, 3.15rem);
+}
+
+.price-card-regular {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.price-card-regular h3,
+.price-card-regular p {
+  color: var(--white);
+}
+
+.price-card-regular .price-when {
+  display: inline-block;
+  margin: 0 0 0.7rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 0.95rem;
+  padding: 0.12rem 0.45rem;
 }
 
 .amount {
@@ -207,13 +266,87 @@ h2 {
   line-height: 1;
 }
 
-.fit-grid article + article {
-  background: var(--black);
-  color: var(--white);
+.policy {
+  margin-top: 1rem;
+  border: 2px solid var(--black);
+  background: var(--white);
+  color: var(--ink);
+  padding: 1.05rem 1.2rem 1.15rem;
 }
 
-.fit-grid article + article h2 {
-  color: var(--white);
+.policy h3 {
+  margin-bottom: 0.4rem;
+}
+
+.policy p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.policy strong {
+  white-space: nowrap;
+}
+
+.fit-heading {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.25rem;
+}
+
+.fit-grid .panel {
+  display: grid;
+  gap: 1rem 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.fit-grid h2 {
+  margin-bottom: 0;
+}
+
+.fit-copy {
+  min-width: 0;
+}
+
+.fit-copy ul {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.fit-copy li + li {
+  margin-top: 0.65rem;
+}
+
+.fit-copy .fit-considerations {
+  display: grid;
+  gap: 1.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fit-considerations li {
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--yellow);
+}
+
+.fit-considerations li + li {
+  margin-top: 0;
+}
+
+.fit-considerations strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--black);
+}
+
+.fit-considerations span {
+  display: block;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--muted);
 }
 
 .teacher {
@@ -273,16 +406,26 @@ button:hover {
 @media (min-width: 800px) {
   .hero-grid,
   .split,
-  .price-grid,
-  .fit-grid,
   .teacher {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
   }
 
-  .fit-grid,
   .teacher {
     align-items: stretch;
+  }
+
+  .price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fit-grid .panel {
+    grid-template-columns: 10rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .fit-considerations {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .dates {
@@ -633,4 +776,5 @@ button:hover {
   .dates {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
