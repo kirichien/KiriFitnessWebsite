@@ -517,6 +517,41 @@ button:hover {
   justify-content: center;
 }
 
+.camp-status {
+  margin: 1.5rem 0 0;
+}
+
+.camp-status span {
+  position: relative;
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  border: 2px solid var(--black);
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.4;
+  padding: calc(0.45rem - 2px) calc(0.85rem - 2px);
+}
+
+.camp-status span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.2rem;
+  background: var(--yellow);
+}
+
+.camp-status small {
+  display: block;
+  margin-top: 0.45rem;
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .cta {
   display: inline-block;
   margin-top: 1.4rem;
