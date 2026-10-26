@@ -226,21 +226,36 @@ h2 {
   letter-spacing: 0.01em;
 }
 
-.price-card-early .early-last-day {
-  display: inline-block;
-  margin: 0 0 0.7rem;
-  background: #d01212;
-  color: #fff;
-  font-size: 1.05rem;
-  font-weight: 800;
-  line-height: 1.35;
-  letter-spacing: 0.04em;
-  padding: 0.18rem 0.55rem;
-  -webkit-text-stroke: 3px #111;
-  paint-order: stroke fill;
+.price-card-early {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.price-card-early h3,
+.price-card-early p {
+  color: #d0d0d0;
 }
 
 .price-card-early .price-when {
+  display: inline-block;
+  margin: 0 0 0.7rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 0.95rem;
+  padding: 0.12rem 0.45rem;
+}
+
+.price-card-regular {
+  background: var(--yellow);
+  border: 0;
+}
+
+.price-card-regular h3,
+.price-card-regular p {
+  color: var(--black);
+}
+
+.price-card-regular .price-when {
   display: block;
   margin: 0 0 0.45rem;
   padding: 0;
@@ -251,27 +266,8 @@ h2 {
   text-align: left;
 }
 
-.price-card-early .amount {
+.price-card-regular .amount {
   font-size: clamp(2.35rem, 4.6vw, 3.15rem);
-}
-
-.price-card-regular {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-}
-
-.price-card-regular h3,
-.price-card-regular p {
-  color: var(--white);
-}
-
-.price-card-regular .price-when {
-  display: inline-block;
-  margin: 0 0 0.7rem;
-  background: var(--yellow);
-  color: var(--black);
-  font-size: 0.95rem;
-  padding: 0.12rem 0.45rem;
 }
 
 .amount {
