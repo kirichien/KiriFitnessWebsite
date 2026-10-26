@@ -860,19 +860,60 @@ button:hover {
   line-height: 2;
 }
 
-.signup-copy > p:not(.eyebrow) {
-  max-width: 48rem;
+.signup-copy > p:not(.eyebrow):not(.current-fee) {
+  max-width: none;
   margin: 0;
+  text-align: center;
+}
+
+.signup-copy > p.current-fee {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1.5rem auto 0;
+  padding: calc(0.45rem - 2px) calc(0.85rem - 2px);
+  background: var(--white);
+  color: var(--black);
+  border: 2px solid var(--black);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.signup-copy .current-fee::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.2rem;
+  background: var(--yellow);
+}
+
+.signup-copy .current-fee strong,
+.signup-copy .current-fee .fee-unit {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
 }
 
 .signup-copy .steps {
   display: grid;
   gap: 0.75rem 2.5rem;
   margin: 1.5rem 0 2rem;
-  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  padding: 1.25rem;
   border-top: 1px solid var(--black);
   border-bottom: 1px solid var(--black);
   line-height: 1.65;
+  text-align: center;
+  list-style-position: inside;
 }
 
 .signup-copy .steps li::marker {

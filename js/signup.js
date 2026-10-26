@@ -4,7 +4,10 @@
   var CONFIRM_ATTEMPTS = 8;
   var CONFIRM_DELAY_MS = 500;
   var WINDOW_START = '2026-10-19';
+  var EARLY_FEE_END = '2026-10-26';
   var WINDOW_END = '2026-10-31';
+
+  showCurrentFee();
 
   var form = document.getElementById('signup-form');
   if (!form) {
@@ -136,7 +139,18 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  function registrationWindowState() {
+  function showCurrentFee() {
+    var label = document.querySelector('[data-fee-label]');
+    var amount = document.querySelector('[data-fee-amount]');
+    if (!label || !amount) {
+      return;
+    }
+    var early = taipeiToday() <= EARLY_FEE_END;
+    label.textContent = early ? '現在報名為早鳥優惠方案：' : '整期報名：';
+    amount.textContent = early ? '2800' : '3150';
+  }
+
+  function taipeiToday() {
     var parts = new Intl.DateTimeFormat('en-CA', {
       timeZone: 'Asia/Taipei',
       year: 'numeric',
@@ -147,7 +161,11 @@
     parts.forEach(function (part) {
       map[part.type] = part.value;
     });
-    var today = map.year + '-' + map.month + '-' + map.day;
+    return map.year + '-' + map.month + '-' + map.day;
+  }
+
+  function registrationWindowState() {
+    var today = taipeiToday();
     if (today < WINDOW_START) {
       return 'before';
     }
